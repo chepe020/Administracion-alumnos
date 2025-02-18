@@ -1,0 +1,112 @@
+[{
+  "_id": {
+    "$oid": "67acfc229ddcc14051b9cb27"
+  },
+  "name": "Joaquin",
+  "surname": "Figueroa",
+  "username": "Joaki",
+  "email": "hfigueroa@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$UjF1goL0NqE+UOxUuNJY8Q$2bXekOvAUCWKUKAZGIr8KNwYO7NEg8UEcu/xnN67yOA",
+  "role": "TEACHER_ROLE",
+  "cursos": [],
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ad03b59d56089028cc127f"
+  },
+  "name": "Mateo",
+  "surname": "Hola",
+  "username": "acarrillo",
+  "email": "esamayoa@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$AB39iIOzWs3hqbVKf0f7dg$FMNNFMzru8LVDpZj3d/poZgez02P5BvNS8Ywy1LIu6U",
+  "role": "STUDENT_ROLE",
+  "cursos": [
+    {
+      "$oid": "67acfcf29ddcc14051b9cb39"
+    },
+    {
+      "$oid": "67acfccb9ddcc14051b9cb36"
+    },
+    {
+      "$oid": "67acfcb99ddcc14051b9cb33"
+    }
+  ],
+  "estado": false,
+  "__v": 6
+},
+{
+  "_id": {
+    "$oid": "67ad162da0022936329acc97"
+  },
+  "name": "Pichiya",
+  "surname": "Sisimit",
+  "username": "Panadero",
+  "email": "lpichiya@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$3ph7/+nutGNZcEOpw2lj0Q$loo5GDeuvhbRHaduoXtJrSuyUg+4eWhBpf51dBCusi0",
+  "role": "STUDENT_ROLE",
+  "cursos": [
+    {
+      "$oid": "67acfcf29ddcc14051b9cb39"
+    }
+  ],
+  "estado": false,
+  "__v": 3
+},
+{
+  "_id": {
+    "$oid": "67ad28793925ef2f81fb4285"
+  },
+  "name": "Robin",
+  "surname": "Sisimit",
+  "username": "Panadero",
+  "email": "rsisimit@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$TG6raesQhtHc6jC67HQ/Jw$1dZIfq5SPfFwPl9+aK+aBg536LZPainhj8TTZnOasew",
+  "role": "STUDENT_ROLE",
+  "cursos": [
+    {
+      "$oid": "67acfccb9ddcc14051b9cb36"
+    },
+    {
+      "$oid": "67acfc6a9ddcc14051b9cb2d"
+    }
+  ],
+  "estado": true,
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67ad28ce3925ef2f81fb4292"
+  },
+  "name": "Andril",
+  "surname": "Sisimit",
+  "username": "Panadero",
+  "email": "jlopez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$KIcUaKtUAhN8AfLXsi+dxw$Jug+GCNVNelaj7Ju1dBLzIF79EM/dMxQb0hqKfAajkM",
+  "role": "STUDENT_ROLE",
+  "cursos": [
+    {
+      "$oid": "67acfcb99ddcc14051b9cb33"
+    },
+    {
+      "$oid": "67acfc6a9ddcc14051b9cb2d"
+    }
+  ],
+  "estado": true,
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67aee7137eadacf2becfd6d5"
+  },
+  "name": "Derian",
+  "surname": "Hernandez",
+  "username": "matematico",
+  "email": "dhernandez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$J3HKm0UQr+GNExpsPEIx4A$Yf0qLpygq7Wgj/7aY5ZXC215UArw8yhKwayDTpsXjMY",
+  "role": "STUDENT_ROLE",
+  "cursos": [],
+  "estado": true,
+  "__v": 0
+}]

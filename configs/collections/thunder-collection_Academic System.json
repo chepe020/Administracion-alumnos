@@ -1,0 +1,254 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Academic System",
+    "collectionId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+    "dateExported": "2025-02-12T23:10:55.313Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "dc0b026e-c550-4818-80ec-cc5871b07413",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "ELIMINAR USUARIO",
+            "url": "http://localhost:3000/academicSystem/v1/users/67ad162da0022936329acc97",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2025-02-05T19:08:41.127Z",
+            "modified": "2025-02-12T22:49:52.133Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3Mzk0MDA1NjgsImV4cCI6MTczOTQwNDE2OH0.lkdL3Jbl-3gxjYZbyAQE7wXcw2ZJoQGVwJRErKIsP14"
+                }
+            ]
+        },
+        {
+            "_id": "376b2071-2fcd-491b-91df-2dcd3b40882a",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "AGREGAR COURSES",
+            "url": "http://localhost:3000/academicSystem/v1/courses/",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-02-05T19:55:39.122Z",
+            "modified": "2025-02-12T23:05:02.299Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3Mzk0MDE0ODUsImV4cCI6MTczOTQwNTA4NX0.NkMg8ooo9MpKIyg9MbuaeC-6TqGQZUh06GBHZQ7EOdo"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Informatica\",\n  \"description\": \"Programacion Y Hardware\",\n  \"email\": \"hfigueroa@gmail.com\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "436e9048-92e2-4cc8-9c3b-7f5e1aa228f2",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "LOGIN",
+            "url": "http://localhost:3000/academicSystem/v1/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2025-02-05T20:16:20.639Z",
+            "modified": "2025-02-12T23:04:45.864Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": " \n{\n\n  \"email\": \"esamayoa@gmail.com\",\n\n  \"password\": \"1234568\"\n}\n ",
+                "form": []
+            }
+        },
+        {
+            "_id": "3b302695-1251-4cb6-a33d-485fc410058c",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "REGISTER",
+            "url": "http://localhost:3000/academicSystem/v1/auth/register",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-02-05T20:16:38.895Z",
+            "modified": "2025-02-12T23:03:42.794Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \n  \"name\": \"Andril\",\n \n  \"surname\": \"Sisimit\",\n \n  \"username\": \"Panadero\",\n \n  \"email\": \"jlopez@gmail.com\",\n \n  \"phone\": \"12345678\",\n \n  \"password\": \"1234568\",\n \n  \"role\": \"STUDENT_ROLE\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "55961054-c91f-4548-b6b0-4ff0890f5d3c",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "LISTAR PETS",
+            "url": "http://localhost:3000/academicSystem/v1/courses?limite=10&desde=0",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2025-02-05T20:43:08.444Z",
+            "modified": "2025-02-12T19:24:13.938Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limite",
+                    "value": "10",
+                    "isPath": false
+                },
+                {
+                    "name": "desde",
+                    "value": "0",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "5c674502-3d2e-40c0-b48e-6affae599915",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "BUSQUEDA COURSES",
+            "url": "http://localhost:3000/academicSystem/v1/courses/67acfcb99ddcc14051b9cb33",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2025-02-05T21:33:55.629Z",
+            "modified": "2025-02-12T22:39:49.709Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3MzkzOTk5MzcsImV4cCI6MTczOTQwMzUzN30.MRNGwtfN86pV2wenuQ-XsXYC9Y43PIKiiEgTVC0NxGI"
+                }
+            ]
+        },
+        {
+            "_id": "e202ff8d-5456-4970-a377-885edb3617dc",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "ELIMINAR COURSES",
+            "url": "http://localhost:3000/academicSystem/v1/courses/67acfc8c9ddcc14051b9cb30",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2025-02-05T22:13:38.823Z",
+            "modified": "2025-02-12T22:39:57.609Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3MzkzOTk5MzcsImV4cCI6MTczOTQwMzUzN30.MRNGwtfN86pV2wenuQ-XsXYC9Y43PIKiiEgTVC0NxGI"
+                }
+            ]
+        },
+        {
+            "_id": "d74d3cdb-5b0f-4e26-a86c-319afd19005b",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "ACTUALIZAR COURSES",
+            "url": "http://localhost:3000/academicSystem/v1/courses/67acfcb99ddcc14051b9cb33",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2025-02-12T19:28:29.305Z",
+            "modified": "2025-02-12T22:50:16.822Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3Mzk0MDA1NjgsImV4cCI6MTczOTQwNDE2OH0.lkdL3Jbl-3gxjYZbyAQE7wXcw2ZJoQGVwJRErKIsP14"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "    {\n      \"name\": \"Matematicas\",\n      \"description\": \"Algebra\"\n    }",
+                "form": []
+            }
+        },
+        {
+            "_id": "cf17e330-f52d-46d8-b1fe-7f7b05024013",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "LISTAR USER",
+            "url": "http://localhost:3000/academicSystem/v1/users/?limite=10&desde=0",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2025-02-12T20:20:54.063Z",
+            "modified": "2025-02-12T21:43:17.368Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limite",
+                    "value": "10",
+                    "isPath": false
+                },
+                {
+                    "name": "desde",
+                    "value": "0",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Juan Perez\",\n  \"email\": \"juan@example.com\",\n  \"password\": \"12345678\", \n  \"role\": \"STUDENT_ROLE\"\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "e3ef51d3-26ab-46ac-9bc0-118636030a45",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "ASIGNAR CURSO",
+            "url": "http://localhost:3000/academicSystem/v1/users/assign-course",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2025-02-12T20:24:03.712Z",
+            "modified": "2025-02-12T23:04:27.548Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjZmMyMjlkZGNjMTQwNTFiOWNiMjciLCJpYXQiOjE3Mzk0MDEzMDEsImV4cCI6MTczOTQwNDkwMX0.4dDzuf-m5KszaMqTrUWIW-qWZbs_Rlkslxbwh0GVy1M"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"studentId\": \"67ad28ce3925ef2f81fb4292\",\n  \"courseId\": [\n\"67acfc6a9ddcc14051b9cb2d\",\n\"67acfcb99ddcc14051b9cb33\"\n  ]\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "a3bb2c9a-b291-46b2-b93b-2edb113f1567",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "ACTUALIZAR USUARIO",
+            "url": "http://localhost:3000/academicSystem/v1/users/67ad03b59d56089028cc127f",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2025-02-12T22:31:33.572Z",
+            "modified": "2025-02-12T22:50:31.226Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3Mzk0MDA1NjgsImV4cCI6MTczOTQwNDE2OH0.lkdL3Jbl-3gxjYZbyAQE7wXcw2ZJoQGVwJRErKIsP14"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n \n  \"name\": \"Mateo\",\n \n  \"surname\": \"Samayoa\",\n \n  \"username\": \"acarrillo\",\n \n  \"email\": \"esamayoa@gmail.com\",\n \n  \"phone\": \"12345678\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "92634f62-d4ad-4963-b8e9-9f767a9e365b",
+            "colId": "f58fb2c6-8c32-4627-bdde-6dbb2aa89ec1",
+            "containerId": "",
+            "name": "BUSCAR POR ID USERS",
+            "url": "http://localhost:3000/academicSystem/v1/users/findUser/67ad03b59d56089028cc127f",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2025-02-12T22:34:44.273Z",
+            "modified": "2025-02-12T22:59:38.880Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ]
+        }
+    ],
+    "ref": "dqt491LW3Vgmw4jD6TRO5mcy8nyJG5Iy-2E14WzNvJ0S22oFyWwWahIoOvGFvHMAfyDRzSxBnMhHwphKbH_idQ"
+}

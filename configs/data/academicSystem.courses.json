@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "67acfc6a9ddcc14051b9cb2d"
+  },
+  "name": "Lenguaje Y Literatura",
+  "description": "Ortografia Y Escritura",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67acfcb99ddcc14051b9cb33"
+  },
+  "name": "Matematicas",
+  "description": "Algebra",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67acfccb9ddcc14051b9cb36"
+  },
+  "name": "Sociales",
+  "description": "Historia del ser humano",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67acfcf29ddcc14051b9cb39"
+  },
+  "name": "Informatica",
+  "description": "Programacion Y Hardware",
+  "status": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67acfe587fd7aa023e018910"
+  },
+  "name": "Informatica",
+  "description": "Programacion Y Hardware",
+  "status": false,
+  "__v": 0
+}]

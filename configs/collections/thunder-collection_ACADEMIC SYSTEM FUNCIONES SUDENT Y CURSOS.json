@@ -1,0 +1,123 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "ACADEMIC SYSTEM FUNCIONES SUDENT Y CURSOS",
+    "collectionId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+    "dateExported": "2025-02-14T06:56:20.490Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ef5ad2b1-a325-4477-8253-ea9f10ec40b4",
+            "colId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+            "containerId": "",
+            "name": "LOGIN",
+            "url": "http://localhost:3000/academicSystem/v1/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-14T06:01:25.530Z",
+            "modified": "2025-02-14T06:52:44.232Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"hfigueroa@gmail.com\",\n  \"password\":\"1234568\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "6e954215-bcac-4ed4-a133-13f8ad37c4f8",
+            "colId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+            "containerId": "",
+            "name": "STUDENT EDIT",
+            "url": "http://localhost:3000/academicSystem/v1/users/67ad28793925ef2f81fb4285",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2025-02-14T06:05:13.399Z",
+            "modified": "2025-02-14T06:36:10.294Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3Mzk1MTQ5MjUsImV4cCI6MTczOTUxODUyNX0.iP1adgWz8ChFk5PM01MgvNpXhept4cbP1LvQjXnvbZ8"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n \n  \"name\": \"Mateo\",\n \n  \"surname\": \"Hola\",\n \n  \"username\": \"acarrillo\",\n \n  \"email\": \"esamayoa@gmail.com\",\n \n  \"phone\": \"12345678\"\n \n\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "916a78db-c22a-46e9-8243-a1d9eed4a800",
+            "colId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+            "containerId": "",
+            "name": "STUDENT DELETE",
+            "url": "http://localhost:3000/academicSystem/v1/users/unsubscribe/",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2025-02-14T06:36:25.681Z",
+            "modified": "2025-02-14T06:37:26.648Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMDNiNTlkNTYwODkwMjhjYzEyN2YiLCJpYXQiOjE3Mzk1MTUwNDEsImV4cCI6MTczOTUxODY0MX0.zBUWx8LuVDjnrJU_vTkiQthdlImyg7Q985TO-McQsak"
+                }
+            ]
+        },
+        {
+            "_id": "ff85c6a8-6aa0-4569-a756-14eb399593bc",
+            "colId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+            "containerId": "",
+            "name": "GET COURSES STUDENTS",
+            "url": "http://localhost:3000/academicSystem/v1/users/findCourse",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2025-02-14T06:45:12.057Z",
+            "modified": "2025-02-14T06:45:44.693Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMjg3OTM5MjVlZjJmODFmYjQyODUiLCJpYXQiOjE3Mzk1MTU0ODksImV4cCI6MTczOTUxOTA4OX0.MvhxEnqagMmTIuRM8y9uqCmO96ifyG_JodFXMmztFpk"
+                }
+            ]
+        },
+        {
+            "_id": "b55ae032-46da-4a5a-a11b-51d2b9c1599b",
+            "colId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+            "containerId": "",
+            "name": "REGISTER",
+            "url": "http://localhost:3000/academicSystem/v1/auth/register",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2025-02-14T06:46:48.046Z",
+            "modified": "2025-02-14T06:47:47.489Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n \n  \"name\": \"Derian\",\n \n  \"surname\": \"Hernandez\",\n \n  \"username\": \"matematico\",\n \n  \"email\": \"dhernandez@gmail.com\",\n \n  \"phone\": \"12345678\",\n \n  \"password\": \"1234568\"\n\n \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "fc4330b5-4c46-48d3-929e-6a734d72750d",
+            "colId": "7b0972fc-ac89-453e-8f13-e12b071b1daa",
+            "containerId": "",
+            "name": "UPDATE CURSOS",
+            "url": "http://localhost:3000/academicSystem/v1/courses/67acfc6a9ddcc14051b9cb2d",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2025-02-14T06:51:31.547Z",
+            "modified": "2025-02-14T06:54:26.386Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjZmMyMjlkZGNjMTQwNTFiOWNiMjciLCJpYXQiOjE3Mzk1MTU5NjQsImV4cCI6MTczOTUxOTU2NH0.JJ7Ko_r2GeZmKSFdExDj4O1N7HvwS4YAYpBaNTNXKyk"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"Lenguaje Y Literatura\",\n    \"description\": \"Ortografia Y Escritura\",\n    \"students\": [\"67ad28793925ef2f81fb4285\",\"67ad28ce3925ef2f81fb4292\"] \n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "B90RnasREmnzB7Gq9fu8JPmuD1rzoA21WDEo52wGGsJkaAAYOExE5YbxnH9MpIkThVHPMIcELVP78-qcPhwBtw"
+}
