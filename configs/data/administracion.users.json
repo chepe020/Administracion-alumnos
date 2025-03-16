@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "67d639ff08918f0cf87fd047"
+  },
+  "name": "Jose",
+  "surname": "Alfredo",
+  "username": "chepe",
+  "email": "jose@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$MlTn2TqKSRYhEcIw2yTG5Q$Slq5sqhfgGUyP3awvWctNFG4yJFR5jxrhfCwNiB+aaY",
+  "role": "TEACHER_ROLE",
+  "cursos": [
+    {
+      "$oid": "67d63fc408918f0cf87fd056"
+    }
+  ],
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d63aef08918f0cf87fd04a"
+  },
+  "name": "Kevin",
+  "surname": "Garcia",
+  "username": "gkevin",
+  "email": "gkevin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$M0eI4SonlW2cFxMQljXvAQ$EPLkOfWSR7bJPQxUMUF8BzpmC6Doaz4AdedaElIMnAM",
+  "role": "STUDENT_ROLE",
+  "cursos": [
+    {
+      "$oid": "67d63fc408918f0cf87fd056"
+    },
+    {
+      "$oid": "67d641c408918f0cf87fd059"
+    }
+  ],
+  "estado": true,
+  "__v": 1
+}]

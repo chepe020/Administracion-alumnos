@@ -3,249 +3,129 @@ import { hash } from "argon2";
 import User from "./user.model.js";
 import Course from "../courses/course.model.js";
 
+const handleErrorResponse = (res, message, error) => {
+    res.status(500).json({ success: false, message, error });
+};
+
 export const getUsers = async (req = request, res = response) => {
     try {
         const { limite = 10, desde = 0 } = req.query;
-
         const query = { estado: true };
 
         const [total, users] = await Promise.all([
             User.countDocuments(query),
-            User.find(query)
-                .skip(Number(desde))
-                .limit(Number(limite))
+            User.find(query).skip(Number(desde)).limit(Number(limite))
         ]);
 
-        res.status(200).json({
-            success: true,
-            total,
-            users
-        });
+        res.status(200).json({ success: true, total, users });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Error Al Obtener Usuario",
-            error
-        });
+        handleErrorResponse(res, "Error al obtener usuarios", error);
     }
 };
 
 export const getAssignedCourses = async (req, res) => {
     try {
-        const userId = req.usuario._id; 
-
-
-        const user = await User.findById(userId).populate('cursos');
-
+        const user = await User.findById(req.usuario._id).populate('cursos');
         if (!user) {
             return res.status(404).json({
                 success: false,
-                msg: 'Usuario no encontrado'
+                message: "Usuario no encontrado"
             });
         }
-
+        
         res.status(200).json({
             success: true,
-            cursos: user.cursos 
+            cursos: user.cursos
         });
     } catch (error) {
         res.status(500).json({
             success: false,
-            msg: 'Error al obtener los cursos asignados',
+            message: "Error al obtener los cursos asignados",
             error
         });
     }
 };
 
+
 export const assignCourseToStudent = async (req, res) => {
     try {
         const { studentId, courseId } = req.body;
-
         const student = await User.findById(studentId);
-        if (!student) {
-            return res.status(404).json({
-                success: false,
-                message: "Estudiante no encontrado"
-            });
-        }
+        if (!student) return res.status(404).json({ success: false, message: "Estudiante no encontrado" });
 
-        if (!Array.isArray(student.cursos)) {
-            student.cursos = [];
-        }
-
-        const MAXCOURSES = 3;
-
-        const totalCourses = student.cursos.length + courseId.length;
-
-        if (totalCourses > MAXCOURSES) {
-            return res.status(400).json({
-                success: false,
-                message: `El Estudiante Tiene El Máximo de ${MAXCOURSES} Cursos Asignados`
-            });
-        }
-
+        student.cursos = student.cursos || [];
+        const MAX_COURSES = 3;
         const newCourseIds = courseId.filter(id => !student.cursos.includes(id));
-
-        if (newCourseIds.length === 0) {
-            return res.status(400).json({
-                success: false,
-                message: "El estudiante ya tiene los cursos seleccionados"
-            });
+        
+        if (student.cursos.length + newCourseIds.length > MAX_COURSES) {
+            return res.status(400).json({ success: false, message: `Máximo ${MAX_COURSES} cursos permitidos` });
         }
 
         for (const id of newCourseIds) {
             const course = await Course.findById(id);
-            if (!course) {
-                return res.status(404).json({
-                    success: false,
-                    message: "Curso No Encontrado"
-                });
-            }
-
-            if (!student.cursos.includes(id)) {
-                student.cursos.push(id);
-            }
+            if (!course) return res.status(404).json({ success: false, message: "Curso no encontrado" });
+            student.cursos.push(id);
         }
 
         await student.save();
-
-        res.status(200).json({
-            success: true,
-            message: "Cursos Asignados Al Estudiante Exitosamente",
-            student,
-            courseId
-        });
+        res.status(200).json({ success: true, message: "Cursos asignados exitosamente", student });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Error Al Asignar Los Cursos",
-            error
-        });
+        handleErrorResponse(res, "Error al asignar cursos", error);
     }
 };
 
 export const getUserById = async (req, res) => {
     try {
-        const { id } = req.params;
-        const user = await User.findById(id);
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                msg: "Usuario Not Found"
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            user
-        });
+        const user = await User.findById(req.params.id);
+        if (!user) return res.status(404).json({ success: false, msg: "Usuario no encontrado" });
+        
+        res.status(200).json({ success: true, user });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            msg: "Error Al Obtener Usuario",
-            error
-        });
+        handleErrorResponse(res, "Error al obtener usuario", error);
     }
 };
 
-export const updateUser = async (req, res = response) => {
+export const updateUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const { password, ...data } = req.body;
-
         if (req.usuario.role === "STUDENT_ROLE" && id !== req.usuario._id.toString()) {
-            return res.status(403).json({
-                success: false,
-                msg: "No está autorizado para actualizar la información de otro usuario"
-            });
+            return res.status(403).json({ success: false, msg: "No autorizado para modificar otro usuario" });
         }
 
-        if (password) {
-            data.password = await hash(password);
-        }
-
+        const data = req.body;
+        if (data.password) data.password = await hash(data.password);
+        
         const user = await User.findByIdAndUpdate(id, data, { new: true });
+        if (!user) return res.status(404).json({ success: false, msg: "Usuario no encontrado" });
 
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                msg: "Usuario no encontrado"
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            msg: "Usuario Actualizado!",
-            user
-        });
-
+        res.status(200).json({ success: true, msg: "Usuario actualizado", user });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            msg: "Error Al Actualizar Usuario",
-            error
-        });
+        handleErrorResponse(res, "Error al actualizar usuario", error);
     }
 };
-
 
 export const unsubscribeStudent = async (req, res) => {
     try {
-        const userId = req.usuario._id; 
-        const user = await User.findByIdAndUpdate(userId, { estado: false }, { new: true });
-
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                msg: 'Usuario no encontrado'
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            msg: 'Usuario dado de baja',
-            user
-        });
+        const user = await User.findByIdAndUpdate(req.usuario._id, { estado: false }, { new: true });
+        if (!user) return res.status(404).json({ success: false, msg: 'Usuario no encontrado' });
+        
+        res.status(200).json({ success: true, msg: 'Usuario dado de baja', user });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            msg: 'Error al dar de baja el usuario',
-            error
-        });
+        handleErrorResponse(res, "Error al dar de baja al usuario", error);
     }
 };
 
-
 export const deleteUser = async (req, res) => {
     try {
-        const { id } = req.params;
-
         if (req.usuario.role !== "TEACHER_ROLE") {
-            return res.status(403).json({
-                success: false,
-                msg: "No está autorizado para eliminar a otros usuarios"
-            });
+            return res.status(403).json({ success: false, msg: "No autorizado para eliminar usuarios" });
         }
 
-        const user = await User.findByIdAndUpdate(id, { estado: false }, { new: true });
+        const user = await User.findByIdAndUpdate(req.params.id, { estado: false }, { new: true });
+        if (!user) return res.status(404).json({ success: false, msg: 'Usuario no encontrado' });
 
-        if (!user) {
-            return res.status(404).json({
-                success: false,
-                msg: 'Usuario no encontrado'
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            msg: 'Usuario desactivado',
-            user
-        });
+        res.status(200).json({ success: true, msg: 'Usuario desactivado', user });
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            msg: 'Error al Desactivar El Usuario',
-            error
-        });
+        handleErrorResponse(res, "Error al desactivar usuario", error);
     }
 };

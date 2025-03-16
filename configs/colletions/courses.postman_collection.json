@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "93f228c7-8667-43cc-bc09-d65b3fcc2b49",
+		"name": "courses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37560259"
+	},
+	"item": [
+		{
+			"name": "Agregar Curso",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTMzNTQsImV4cCI6MTc0MjA5Njk1NH0.0BhvB7HBc3Fn8kLUT65SnyWmV79jS2-n-DCbfRqiMYU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"hola\",\r\n    \"email\": \"jose@gmail.com\",\r\n    \"description\":\"Como hablar en publico\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/courses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"courses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Curso",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTMzNTQsImV4cCI6MTc0MjA5Njk1NH0.0BhvB7HBc3Fn8kLUT65SnyWmV79jS2-n-DCbfRqiMYU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Etica\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/courses/:id?=67d641c408918f0cf87fd059",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"courses",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "67d641c408918f0cf87fd059"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67d641c408918f0cf87fd059"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Curso",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTMzNTQsImV4cCI6MTc0MjA5Njk1NH0.0BhvB7HBc3Fn8kLUT65SnyWmV79jS2-n-DCbfRqiMYU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/courses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"courses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTMzNTQsImV4cCI6MTc0MjA5Njk1NH0.0BhvB7HBc3Fn8kLUT65SnyWmV79jS2-n-DCbfRqiMYU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/courses/:id?=67d641c408918f0cf87fd059",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"courses",
+						":id"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "67d641c408918f0cf87fd059"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67d641c408918f0cf87fd059"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTMzNTQsImV4cCI6MTc0MjA5Njk1NH0.0BhvB7HBc3Fn8kLUT65SnyWmV79jS2-n-DCbfRqiMYU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/courses/:id?=67d6433f08918f0cf87fd06d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"courses",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "67d6433f08918f0cf87fd06d"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67d6433f08918f0cf87fd06d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

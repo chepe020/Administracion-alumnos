@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "e7862588-b82d-4186-a1ed-a24764aedfd2",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37560259"
+	},
+	"item": [
+		{
+			"name": "Mostrar Profesores y Alumnos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar cursos asignados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2M2FlZjA4OTE4ZjBjZjg3ZmQwNGEiLCJpYXQiOjE3NDIwOTUzNDEsImV4cCI6MTc0MjA5ODk0MX0.P2pPbwGS2GeBvsT7pUvBf0Cql6GVVC0wBgrmSoYqriE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"gkevin\",\r\n    \"cursos\": [\r\n        \"67d641c408918f0cf87fd059\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/findCourse/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						"findCourse",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Asignar cursos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTczMzgsImV4cCI6MTc0MjEwMDkzOH0.NncQk0fMiehrV4NrsmpNgGSk3ezUapF1RUZrdyAs2zk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentId\": \"67d63aef08918f0cf87fd04a\", \r\n    \"courseId\": [\r\n        \"67d641c408918f0cf87fd059\"  \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/assign-course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						"assign-course"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTczMzgsImV4cCI6MTc0MjEwMDkzOH0.NncQk0fMiehrV4NrsmpNgGSk3ezUapF1RUZrdyAs2zk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cursos\": \"67d63fc408918f0cf87fd056\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/:id?=67d639ff08918f0cf87fd047",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						":id"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "67d639ff08918f0cf87fd047"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67d639ff08918f0cf87fd047"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Alumnos",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTczMzgsImV4cCI6MTc0MjEwMDkzOH0.NncQk0fMiehrV4NrsmpNgGSk3ezUapF1RUZrdyAs2zk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/unsubscribe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						"unsubscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Profesor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTczMzgsImV4cCI6MTc0MjEwMDkzOH0.NncQk0fMiehrV4NrsmpNgGSk3ezUapF1RUZrdyAs2zk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2Q2MzlmZjA4OTE4ZjBjZjg3ZmQwNDciLCJpYXQiOjE3NDIwOTczMzgsImV4cCI6MTc0MjEwMDkzOH0.NncQk0fMiehrV4NrsmpNgGSk3ezUapF1RUZrdyAs2zk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/administracion/v1/users/findUser/:id?=67d63aef08918f0cf87fd04a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"administracion",
+						"v1",
+						"users",
+						"findUser",
+						":id"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "67d63aef08918f0cf87fd04a"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "67d63aef08918f0cf87fd04a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

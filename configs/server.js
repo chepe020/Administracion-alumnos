@@ -20,9 +20,9 @@ const configurarMiddlewares = (app) => {
 }
 
 const configurarRutas = (app) =>{
-        app.use("/academicSystem/v1/auth", authRoutes);
-        app.use("/academicSystem/v1/users", userRoutes);
-        app.use("/academicSystem/v1/courses", courseRoutes);
+        app.use("/administracion/v1/auth", authRoutes);
+        app.use("/administracion/v1/users", userRoutes);
+        app.use("/administracion/v1/courses", courseRoutes);
 }
 
 const conectarDB = async () => {

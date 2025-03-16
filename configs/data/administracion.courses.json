@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "67d63fc408918f0cf87fd056"
+  },
+  "name": "Matematicas",
+  "description": "Curso de ciencias exactas",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67d641c408918f0cf87fd059"
+  },
+  "name": "Etica",
+  "description": "Curso que habla de Religuión",
+  "status": true,
+  "__v": 0
+}]

@@ -15,15 +15,15 @@ export const saveCourse = async (req, res) =>{
         res.status(200).json({
             success: true,
             course
-        })
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: "Error Al Guardar El Curso",
+            message: "Error al guardar el curso",
             error
-        })
+        });
     }
-}
+};
 
 export const getCourse = async(req, res) => {
     const {limite = 10, desde = 0} = req.query;
@@ -33,7 +33,6 @@ export const getCourse = async(req, res) => {
             .skip(Number(desde))
             .limit(Number(limite));
 
-
         if (!courses.length) {
             return res.status(404).json({
                 success: false,
@@ -41,23 +40,21 @@ export const getCourse = async(req, res) => {
             });
         }
 
-        
         const total = await Course.countDocuments(query);
 
         res.status(200).json({
             success: true,
             total,
             courses
-        })
-
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: "Error Al Obtener El Curso",
+            message: "Error al obtener el curso",
             error
-        })
+        });
     }
-}
+};
 
 export const searchCourse = async (req, res) =>{
     const {id} = req.params;
@@ -68,22 +65,22 @@ export const searchCourse = async (req, res) =>{
         if(!course){
             return res.status(404).json({
                 success: false,
-                message: "Curso No Encontrado"
-            })
+                message: "Curso no encontrado"
+            });
         }
         
         res.status(200).json({
             success: true,
             course
-        })
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
             message: "Error al buscar el curso",
             error
-        })
+        });
     }
-}
+};
 
 export const deleteCourse = async(req, res) => {
     const {id} = req.params;
@@ -107,28 +104,27 @@ export const deleteCourse = async(req, res) => {
 
         res.status(200).json({
             success: true,
-            message: "Curso Eliminado Exitosamente y Desasignado de los Estudiantes"
+            message: "Curso eliminado exitosamente y desasignado de los estudiantes"
         });
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: "Error Al Eliminar El Curso",
+            message: "Error al eliminar el curso",
             error
         });
     }
 };
 
-
-export const updateCourse = async(req, res = response) => {
+export const updateCourse = async(req, res) => {
     try {
-        const { id } = req.params; // ID del curso que se va a actualizar
-        const { _id, students, ...data } = req.body; // Extraer la información del cuerpo de la solicitud
+        const { id } = req.params;
+        const { _id, students, ...data } = req.body; 
 
         const course = await Course.findById(id);
         if (!course) {
             return res.status(404).json({
                 success: false,
-                msg: "Curso no encontrado"
+                message: "Curso no encontrado"
             });
         }
 
@@ -148,14 +144,13 @@ export const updateCourse = async(req, res = response) => {
 
         res.status(200).json({
             success: true,
-            msg: "Curso Actualizado y Alumnos Asignados!",
+            message: "Curso actualizado y alumnos asignados!",
             course: updatedCourse
         });
-
     } catch (error) {
         res.status(500).json({
             success: false,
-            msg: "Error Al Actualizar El Curso",
+            message: "Error al actualizar el curso",
             error
         });
     }
